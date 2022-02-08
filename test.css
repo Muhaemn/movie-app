@@ -68,7 +68,7 @@ main {
   width: 100%;
   transition: ease-in 0.3s;
 }
-.img {
+.movie:hover img {
   transform: scale(1.2);
 }
 

@@ -233,8 +233,9 @@ function showMovies(data) {
     const { title, poster_path, vote_average, overview, id } = movie;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
+    movieEl.id = id + 1;
     movieEl.innerHTML = `
-             <img src="${
+             <img id="${id + 2}" src="${
                poster_path
                  ? IMG_URL + poster_path
                  : "http://via.placeholder.com/1080x1580"
@@ -260,6 +261,12 @@ function showMovies(data) {
     document.getElementById(id).addEventListener("click", () => {
       console.log(id);
       openNav(movie);
+    });
+    document.getElementById(id + 1).addEventListener("mouseenter", () => {
+      document.getElementById(id + 2).classList.add("img");
+    });
+    document.getElementById(id + 1).addEventListener("mouseleave", () => {
+      document.getElementById(id + 2).classList.remove("img");
     });
   });
 }

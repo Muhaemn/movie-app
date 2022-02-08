@@ -419,12 +419,9 @@ function pageCall(page) {
     getMovies(url);
   }
 }
-let mouse = document.querySelector(".cursor");
+/*let mouse = document.querySelector(".cursor");
 window.addEventListener("mousemove", (e) => {
   mouse.style.top = e.pageY + "px";
   mouse.style.left = e.pageX + "px";
   mouse.style.display = "block";
-});
-setInterval(() => {
-  mouse.style.display = "none";
-}, 5000);
+});*/

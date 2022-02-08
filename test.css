@@ -13,6 +13,7 @@ body {
   background-color: var(--primary-color);
   font-family: "Poppins", sans-serif;
   margin: 0;
+  cursor: pointer;
 }
 
 header {
@@ -141,7 +142,7 @@ main {
   transition: ease-in 0.3s;
   margin-top: 2px;
   box-sizing: border-box;
-  cursor:pointer;
+  cursor: pointer;
 }
 .tag:hover {
   background-color: orange;

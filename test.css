@@ -2,7 +2,6 @@
 
 * {
   box-sizing: border-box;
-  cursor: none;
 }
 
 :root {
@@ -142,6 +141,7 @@ main {
   transition: ease-in 0.3s;
   margin-top: 2px;
   box-sizing: border-box;
+  cursor:pointer;
 }
 .tag:hover {
   background-color: orange;
@@ -173,6 +173,7 @@ main {
 
 .disabled {
   color: grey;
+  cursor:not-allowed;
 }
 
 .current {

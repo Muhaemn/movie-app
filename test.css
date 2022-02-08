@@ -316,4 +316,5 @@ main {
   transform: translate(-50%, -50%);
   backdrop-filter: grayScale();
   background-color: rgba(255, 166, 0, 0.685);
+  display:none;
 }

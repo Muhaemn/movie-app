@@ -425,6 +425,6 @@ window.addEventListener("mousemove", (e) => {
   mouse.style.left = e.pageX + "px";
   mouse.style.display = "block";
 });
-window.addEventListener("mouseout", (e) => {
+setInterval(() => {
   mouse.style.display = "none";
-});
+}, 5000);

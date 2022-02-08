@@ -262,12 +262,12 @@ function showMovies(data) {
       console.log(id);
       openNav(movie);
     });
-    document.getElementById(id + 1).addEventListener("mouseenter", () => {
+    /*document.getElementById(id + 1).addEventListener("mouseenter", () => {
       document.getElementById(id + 2).classList.add("img");
     });
     document.getElementById(id + 1).addEventListener("mouseleave", () => {
       document.getElementById(id + 2).classList.remove("img");
-    });
+    });*/
   });
 }
 

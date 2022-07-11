@@ -108,32 +108,27 @@ function setGenre() {
     t.classList.add("tag", "sort");
     t.id = genre.id;
     t.innerText = genre.name;
-    if (genre.name == "Documentary") {
-      t.classList.add("disabled");
+    t.addEventListener("click", () => {
+    if (selectedGenre.length == 0) {
+      selectedGenre.push(genre.id);
+    } else {
+      if (selectedGenre.includes(genre.id)) {
+        selectedGenre = selectedGenre.filter((e) => e != genre.id);
+      } else {
+        selectedGenre.push(genre.id);
+      }
     }
-    if (genre.name != "Documentary") {
-      t.addEventListener("click", () => {
-        if (selectedGenre.length == 0) {
-          selectedGenre.push(genre.id);
-        } else {
-          if (selectedGenre.includes(genre.id)) {
-            selectedGenre = selectedGenre.filter((e) => e != genre.id);
-          } else {
-            selectedGenre.push(genre.id);
-          }
-        }
-        if (selectedGenre.includes(genre.id)) {
-          t.classList.add("highlight");
-        } else {
-          t.classList.remove("highlight");
-        }
+    if (selectedGenre.includes(genre.id)) {
+      t.classList.add("highlight");
+    } else {
+      t.classList.remove("highlight");
+    }
 
-        console.log(selectedGenre);
-        getMovies(
-          API_URL + "&with_genres=" + encodeURI(selectedGenre.join(","))
-        );
-      });
-    }
+    console.log(selectedGenre);
+    getMovies(
+      API_URL + "&with_genres=" + encodeURI(selectedGenre.join(","))
+    );
+  });
     tagsEl.append(t);
   });
   let clear = document.createElement("div");
@@ -156,7 +151,6 @@ function getMovies(url) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if (data.results.length !== 0) {
         showMovies(data.results);
         currentPage = data.page;
@@ -262,12 +256,6 @@ function showMovies(data) {
       console.log(id);
       openNav(movie);
     });
-    /*document.getElementById(id + 1).addEventListener("mouseenter", () => {
-      document.getElementById(id + 2).classList.add("img");
-    });
-    document.getElementById(id + 1).addEventListener("mouseleave", () => {
-      document.getElementById(id + 2).classList.remove("img");
-    });*/
   });
 }
 
